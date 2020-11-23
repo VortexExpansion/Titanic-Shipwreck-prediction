@@ -41,7 +41,8 @@ X=train.drop(['Survived'],axis=1)
 y=train.Survived
 #print(X.head())
 #print(test.head())
-# Decision Tree Classifier
+
+# ----------------    Decision Tree Classifier   : This model got an accuracy of 73% on kaggle
 
 model_1=DecisionTreeClassifier(random_state=1)
 model_1.fit(X,y)
