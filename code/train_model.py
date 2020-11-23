@@ -2,10 +2,21 @@ import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import metrics
 import csv
+from sklearn.ensemble import RandomForestClassifier
+
 
 train = pd.read_csv("./data/train.csv")
 test = pd.read_csv("./data/test.csv")
 exposure = train.head()
+
+def write_to_new_file(filename):
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["PassengerId","Survived"])
+        ID=892
+        for loop_var in range(len(prediction)):
+            writer.writerow([ID,prediction[loop_var]])
+            ID+=1
 
 # for c in test.columns:
 #     print(c,100*test[c].isnull().sum()/len(test))
@@ -42,6 +53,9 @@ y=train.Survived
 #print(X.head())
 #print(test.head())
 
+
+'''
+
 # ----------------    Decision Tree Classifier   : This model got an accuracy of 73% on kaggle
 
 model_1=DecisionTreeClassifier(random_state=1)
@@ -52,14 +66,18 @@ print(prediction)
 #percent_1=metrics.accuracy_score(prediction,y)
 #print('Model accuracy of Decision Tree Classifier = {}%'.format(100*percent_1))
 
-# Writing to a file
+write_to_new_file('DTClassifier.csv')
+  
 
-with open('DTClassifier.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(["PassengerId","Survived"])
-    ID=892
-    for loop_var in range(len(prediction)):
-        writer.writerow([ID,prediction[loop_var]])
-        ID+=1
-    
+'''
 
+'''
+# ----------------- Random Forest Classifier : This model got an accuracy of 74% on kaggle
+
+model_2 = RandomForestClassifier(random_state=1)
+model_2.fit(X,y)
+prediction = model_2.predict(test)
+print(prediction)
+
+write_to_new_file('RandomForestClassifier.csv')
+'''
