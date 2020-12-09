@@ -5,6 +5,7 @@ import csv
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 
+global train
 
 def test_accuracy(prediction,y):
 
@@ -63,6 +64,9 @@ def check_missing_values(test):
     '''
     for c in test.columns:
         print(c,100*test[c].isnull().sum()/len(test))
+
+def get_train():
+    return train
 
 train = pd.read_csv("./data/train.csv")
 test = pd.read_csv("./data/test.csv")
