@@ -8,9 +8,9 @@ Tested various machine learning models on the dataset to predict which passenger
 <img src="/Plot/index2.jpg" height = '400' />
 <h1> Features </h1>
 <p float="left">
-  <img src="/Plot/age.png" width="310" />
-  <img src="/Plot/survival_class_sex.png" width="310" height='233'/> 
-  <img src="/Plot/sex.png" width="310" />
+  <img src="/Plot/age.png" width="300" />
+  <img src="/Plot/survival_class_sex.png" width="300" height='225'/> 
+  <img src="/Plot/sex.png" width="300" />
 </p>
 
 <h1> Results </h1>
